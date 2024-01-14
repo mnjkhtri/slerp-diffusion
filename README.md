@@ -1,4 +1,5 @@
-Result:
+Result: (no audio here)
+
 ![](images/stellar.gif)
 
 This project focuses on generating videos by interpolating 'N' input scenes using a stable diffusion pipeline. The goal is to create a smooth transition between scenes, resulting in a high-quality video playback at 24 frames per second (FPS). The interpolation is facilitated through the FiLM (Feature-wise Linear Modulation) technique, enhancing the visual coherency of the generated frames.
