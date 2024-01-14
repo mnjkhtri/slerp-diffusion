@@ -9,6 +9,6 @@ By interpolating in the latent space of stable diffusion, the project navigates 
 Spherical interpolation takes into account the geometry of the hypersphere, which ensures a smooth and shortest-path interpolation between two rotations.
 ![](images/spherical_interpolation.png)
 
-Result: (no audio here)
+Result (no audio here):
 
 ![](images/stellar.gif)
