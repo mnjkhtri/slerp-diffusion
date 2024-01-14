@@ -1,9 +1,6 @@
 import os
-
-os.system("git clone https://github.com/google-research/frame-interpolation")
 import sys
 
-sys.path.append("frame-interpolation")
 import numpy as np
 import tensorflow as tf
 import mediapy
@@ -12,9 +9,8 @@ from eval import interpolator, util
 from huggingface_hub import snapshot_download
 from image_tools.sizes import resize_and_crop
 
-def load_model(model_name):
-  model = interpolator.Interpolator(snapshot_download(repo_id=model_name), None)
-  return model
+os.system("git clone https://github.com/google-research/frame-interpolation")
+sys.path.append("frame-interpolation")
 
 model_names = [
   "akhaliq/frame-interpolation-film-style",
@@ -26,6 +22,12 @@ models = {model_name: load_model(model_name) for model_name in model_names}
 
 ffmpeg_path = util.get_ffmpeg_path()
 mediapy.set_ffmpeg(ffmpeg_path)
+
+
+def load_model(model_name):
+  model = interpolator.Interpolator(snapshot_download(repo_id=model_name), None)
+  return model
+
 
 def predict(times_to_interpolate, model_name=model_names[0]):
   model = models[model_name]
